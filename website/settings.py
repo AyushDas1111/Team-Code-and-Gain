@@ -33,6 +33,13 @@ ALLOWED_HOSTS = ['*']  # or ['your-render-app-name.onrender.com']
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
+STATIC_URL = '/static/'
+STATIC_ROOT = BASE_DIR / 'staticfiles'   # for collectstatic
+MIDDLEWARE = [
+    'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',  # add this
+    ...
+]
 
 
 # Application definition
